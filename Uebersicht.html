@@ -2,87 +2,170 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<title>Übersichtskarte – Funkübung</title>
+<title>Schnitzeljagd – Feuerwehr Neuhof</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-
 <style>
-body {
-  margin: 0;
+body{
+  margin:0;
+  padding:24px;
   font-family: Arial, sans-serif;
+  background:#f5f6fa;
 }
-#map {
-  height: 100vh;
+h1{margin-bottom:4px}
+.subtitle{color:#555;margin-bottom:24px}
+
+.card{
+  background:#fff;
+  border-radius:8px;
+  padding:16px;
+  margin-bottom:24px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.1);
 }
-.popup h3 {
-  margin: 0 0 5px 0;
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
 }
-.popup p {
-  margin: 4px 0;
+
+th{
+  background:#3e4047;
+  color:#fff;
+  padding:8px;
+  text-align:left;
 }
-.punkte {
-  font-weight: bold;
-  color: darkgreen;
+
+td{
+  padding:8px;
+  border-bottom:1px solid #ddd;
 }
+
+.center{text-align:center}
+.small{font-size:13px;color:#666}
 </style>
 </head>
 
 <body>
-<div id="map"></div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const map = L.map('map').setView([50.465, 9.604], 14);
+<h1>🧭 Schnitzeljagd – Feuerwehr Neuhof</h1>
+<div class="subtitle">Übersicht für Übungsleitung · Stationen · Aufgaben · Punkte · Buchstaben</div>
 
-// OpenStreetMap
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap'
-}).addTo(map);
+<!-- LINKS -->
+<div class="card">
+<h2>🔗 Links</h2>
+<table>
+<tr>
+  <th>Bereich</th>
+  <th>Beschreibung</th>
+  <th class="center">Link</th>
+</tr>
+<tr>
+  <td>Stationsübersicht</td>
+  <td>Alle Stationen der Schnitzeljagd</td>
+  <td class="center">Öffnen</td>
+</tr>
+<tr>
+  <td>Variante Jugendfeuerwehr</td>
+  <td>Vereinfachte Aufgaben</td>
+  <td class="center">Öffnen</td>
+</tr>
+<tr>
+  <td>Variante Einsatzabteilung</td>
+  <td>Erweiterte Aufgaben</td>
+  <td class="center">Öffnen</td>
+</tr>
+</table>
+</div>
 
-// 🔥 STATIONEN 🔥
-const stationen = [
-  {
-    nr: 1,
-    name: "Brandmeldeanlage",
-    ort: "Rathaus Neuhof",
-    aufgabe: "Welche Melderart ist hier verbaut?",
-    punkte: 10,
-    lat: 50.4682,
-    lon: 9.6029
-  },
-  {
-    nr: 2,
-    name: "Hydrant",
-    ort: "Brüder-Grimm-Straße",
-    aufgabe: "Hydrantenart bestimmen und Förderleistung nennen",
-    punkte: 8,
-    lat: 50.4638,
-    lon: 9.6074
-  },
-  {
-    nr: 3,
-    name: "Funkfrage",
-    ort: "Sportplatz",
-    aufgabe: "Was bedeutet der Funkrufname Florian?",
-    punkte: 6,
-    lat: 50.4609,
-    lon: 9.6001
-  }
-];
+<!-- RAHMEN -->
+<div class="card">
+<h2>📋 Rahmendaten</h2>
+<table>
+<tr><th>Bereich</th><th>Angabe</th></tr>
+<tr><td>Funkkanal TMO</td><td>EG18</td></tr>
+<tr><td>Funkkanal DMO</td><td>316</td></tr>
+<tr><td>Punkte je Station</td><td>0–10</td></tr>
+<tr><td>Ziel</td><td>Lösungswort ermitteln</td></tr>
+</table>
+</div>
 
-// Marker setzen
-stationen.forEach(s => {
-  L.marker([s.lat, s.lon]).addTo(map)
-    .bindPopup(`
-      <div class="popup">
-        <h3>Station ${s.nr}: ${s.name}</h3>
-        <p><b>Ort:</b> ${s.ort}</p>
-        <p><b>Aufgabe:</b> ${s.aufgabe}</p>
-        <p class="punkte">Punkte: ${s.punkte}</p>
-      </div>
-    `);
-});
-</script>
+<!-- STATIONEN -->
+<div class="card">
+<h2>📍 Stationsübersicht</h2>
+<table>
+<tr>
+  <th>Nr.</th>
+  <th>Ort</th>
+  <th>Aufgabe</th>
+  <th class="center">Punkte</th>
+  <th class="center">Buchstabe</th>
+</tr>
+
+<tr>
+  <td>1</td>
+  <td>Erlenhof 3</td>
+  <td>Welche Melderart ist hier verbaut?</td>
+  <td class="center">10</td>
+  <td class="center">S</td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Rilkestraße</td>
+  <td>Hydrantenart bestimmen</td>
+  <td class="center">8</td>
+  <td class="center">C</td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Rettungspunkt FD-543</td>
+  <td>Bedeutung Rettungspunkt erklären</td>
+  <td class="center">6</td>
+  <td class="center">H</td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td>Gewerbestr. 9 (GTÜ)</td>
+  <td>Welche Gefahren bestehen an der Einsatzstelle?</td>
+  <td class="center">10</td>
+  <td class="center">N</td>
+</tr>
+</table>
+
+<p class="small">
+Die Buchstaben ergeben in richtiger Reihenfolge das Lösungswort.
+</p>
+</div>
+
+<!-- OPTIONAL -->
+<div class="card">
+<h2>🚒 Kombinierte Übersicht je Fahrzeug (optional)</h2>
+<table>
+<tr>
+  <th>Pos</th>
+  <th>HLF</th><th>Bst.</th>
+  <th>LF</th><th>Bst.</th>
+  <th>TSF</th><th>Bst.</th>
+</tr>
+
+<tr>
+  <td>1</td>
+  <td>Erlenhof 3</td><td>S</td>
+  <td>Rilkestraße</td><td>C</td>
+  <td>Rettungspunkt FD-543</td><td>H</td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Rilkestraße</td><td>C</td>
+  <td>Rettungspunkt FD-543</td><td>H</td>
+  <td>Gewerbestr. 9</td><td>N</td>
+</tr>
+</table>
+</div>
+
 </body>
 </html>
