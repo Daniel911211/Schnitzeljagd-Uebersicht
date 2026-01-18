@@ -1,1 +1,0 @@
-# Schnitzeljagd-Uebersicht
