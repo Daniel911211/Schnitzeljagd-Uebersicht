@@ -58,11 +58,13 @@ body{
 }
 
 /* ZENTRALE BOX */
-.center{
-  grid-row:2 / 4;
+ .center{
+  grid-column: 2;        /* ← DAS fixiert sie in der Mitte */
+  grid-row: 2 / 4;
   border:2px solid rgba(34,197,94,0.6);
   background:rgba(34,197,94,0.08);
 }
+
 
 .center h2{
   color:#86efac;
