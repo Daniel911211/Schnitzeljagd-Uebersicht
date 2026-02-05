@@ -28,9 +28,10 @@ body{
   box-shadow:0 30px 60px rgba(0,0,0,.6);
   display:grid;
   grid-template-columns: 1fr 1.2fr 1fr;
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: auto auto auto; /* 🔴 WICHTIG */
   gap:24px;
 }
+
 
 /* ÜBERSCHRIFT */
 .header{
@@ -49,7 +50,10 @@ body{
   padding:20px;
   font-size:1.1rem;
   line-height:1.6;
+
+  align-self:start;   /* 🔴 verhindert Höhenstreckung */
 }
+
 
 .box h2{
   margin-top:0;
