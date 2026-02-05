@@ -6,157 +6,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+/* GRUNDLAYOUT */
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#020617;
   color:#e5e7eb;
   display:flex;
   justify-content:center;
   align-items:center;
-  min-height:100vh;
+  height:100vh;
 }
 
-.card{
+/* A4 / BEAMER FLÄCHE */
+.page{
+  width:90vw;
+  height:90vh;
   background:#0f172a;
-  padding:26px;
-  border-radius:16px;
-  width:380px;
-  box-shadow:0 20px 40px rgba(0,0,0,.6);
+  border-radius:20px;
+  padding:40px;
+  box-shadow:0 30px 60px rgba(0,0,0,.6);
+  display:grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: auto 1fr 1fr;
+  gap:24px;
 }
 
-h1{
+/* ÜBERSCHRIFT */
+.header{
+  grid-column:1 / 4;
   text-align:center;
+  font-size:2.6rem;
   color:#60a5fa;
-  margin-top:0;
+  font-weight:bold;
 }
 
-.section{
-  margin-bottom:18px;
+/* BOXEN */
+.box{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(96,165,250,0.35);
+  border-radius:16px;
+  padding:20px;
+  font-size:1.1rem;
   line-height:1.6;
 }
 
-.section strong{
-  color:#a5f3fc;
+.box h2{
+  margin-top:0;
+  color:#93c5fd;
+  font-size:1.4rem;
 }
 
-ul{
-  padding-left:18px;
-  margin:8px 0;
+/* ZENTRALE BOX */
+.center{
+  grid-row:2 / 4;
+  border:2px solid rgba(34,197,94,0.6);
+  background:rgba(34,197,94,0.08);
 }
 
-li{
-  margin-bottom:6px;
+.center h2{
+  color:#86efac;
 }
 
-.infoBox{
-  margin-top:18px;
-  padding:16px;
-  border-radius:14px;
-  background:rgba(59,130,246,0.12);
-  border:1px solid rgba(59,130,246,0.45);
-  color:#bfdbfe;
-}
-
-.startBox{
-  margin-top:22px;
-  padding:16px;
-  border-radius:14px;
-  background:rgba(34,197,94,0.12);
-  border:1px solid rgba(34,197,94,0.45);
-  color:#bbf7d0;
-  text-align:center;
-}
-
-button{
-  margin-top:18px;
-  width:100%;
-  padding:14px;
-  border:none;
-  border-radius:12px;
-  background:#2563eb;
-  color:white;
+/* HIGHLIGHTS */
+.highlight{
+  color:#fde68a;
   font-weight:bold;
-  cursor:pointer;
+}
+
+/* FOOTER HINWEIS */
+.footer{
+  grid-column:1 / 4;
+  text-align:center;
+  font-size:1rem;
+  opacity:0.85;
 }
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<div class="page">
 
-<h1>🧭 Schnitzeljagd – Einweisung</h1>
+  <div class="header">
+    🧭 Schnitzeljagd – Einweisung
+  </div>
 
-<div class="section">
-<strong>🎯 Ziel der Schnitzeljagd</strong><br>
-Ihr bewegt euch als Gruppe von Station zu Station, löst Aufgaben
-und sammelt dabei <strong>Lösungswörter</strong>.  
-Diese werden am Ende benötigt, um das Finalrätsel zu lösen und das
-<strong>Versteck mit Süßigkeiten</strong> freizuschalten 🍬.
-</div>
+  <!-- REGELN -->
+  <div class="box">
+    <h2>📜 Regeln</h2>
+    • Jede Gruppe bleibt zusammen<br>
+    • Stationen werden <span class="highlight">nacheinander</span> gelöst<br>
+    • QR-Codes dürfen nicht weitergegeben werden<br>
+    • Antworten ehrlich eintragen
+  </div>
 
-<div class="section">
-<strong>🗺️ Ablauf</strong>
-<ul>
-  <li>Jede Gruppe startet an Station 1</li>
-  <li>An jeder Station gibt es eine Hauptfrage</li>
-  <li>Zusätzlich kann es eine Bonusfrage geben</li>
-  <li>Nach jeder Station erhaltet ihr ein Rätsel zur nächsten</li>
-</ul>
-</div>
+  <!-- EINLEITUNG -->
+  <div class="box center">
+    <h2>🎯 Einführung – Ziel & Ablauf</h2>
+    Ihr durchlauft mehrere Stationen.<br><br>
 
-<div class="section">
-<strong>⭐ Punktevergabe</strong>
-<ul>
-  <li>Für jede richtig beantwortete Hauptfrage gibt es Punkte</li>
-  <li>Bonusfragen bringen zusätzliche Punkte</li>
-  <li>Nicht jede Bonusfrage muss beantwortet werden</li>
-</ul>
-</div>
+    An jeder Station:
+    <br>• eine <span class="highlight">Hauptfrage</span>
+    <br>• optional eine <span class="highlight">Bonusfrage</span>
+    <br>• am Ende ein <span class="highlight">Rätsel zur nächsten Station</span>
+    <br><br>
 
-<div class="infoBox">
-<strong>⏱️ Zeit-Regel (wichtig!)</strong><br><br>
-Sollten am Ende zwei oder mehr Gruppen die gleiche Punktzahl haben,
-entscheidet die <strong>benötigte Zeit</strong>.<br><br>
-👉 Die Gruppe, die die Stationen insgesamt <strong>schneller</strong>
-beantwortet hat, liegt vorne.
-</div>
+    Jede Gruppe sammelt ein <span class="highlight">Lösungswort</span>.<br>
+    Alle Wörter zusammen öffnen am Ende das <span class="highlight">Versteck mit der Belohnung</span>.
+  </div>
 
-<div class="section">
-<strong>📱 Technik & QR-Codes</strong>
-<ul>
-  <li>Jede Station wird über einen eigenen QR-Code aufgerufen</li>
-  <li>Antworten vollständig eingeben</li>
-  <li>Groß- und Kleinschreibung ist meist egal</li>
-</ul>
-</div>
+  <!-- VERHALTEN -->
+  <div class="box">
+    <h2>🤝 Verhalten</h2>
+    • Rücksicht auf Passanten nehmen<br>
+    • Straßen sicher überqueren<br>
+    • Keine Rennen an gefährlichen Stellen<br>
+    • Anweisungen der Betreuer beachten
+  </div>
 
-<div class="section">
-<strong>⚠️ Regeln & Verhalten</strong>
-<ul>
-  <li>Immer als Gruppe zusammenbleiben</li>
-  <li>Auf Verkehr und Umgebung achten</li>
-  <li>Nicht rennen auf Straßen oder Parkplätzen</li>
-  <li>Respektvoll mit Orten und Personen umgehen</li>
-</ul>
-</div>
+  <!-- FAIRPLAY -->
+  <div class="box">
+    <h2>⚖️ Fairplay</h2>
+    • Keine Hilfe von außen<br>
+    • Keine Lösungen weitergeben<br>
+    • Jede Gruppe arbeitet selbstständig<br>
+    • Spaß & Teamgeist stehen im Vordergrund
+  </div>
 
-<div class="section">
-<strong>🤝 Fairplay</strong><br>
-Es geht um Teamgeist, Aufmerksamkeit und Spaß – nicht nur um Tempo.
-Helft euch gegenseitig und genießt das gemeinsame Abenteuer.
-</div>
+  <!-- TECHNIK -->
+  <div class="box">
+    <h2>📱 Technik & QR-Code</h2>
+    • Jede Station hat einen QR-Code<br>
+    • QR-Code führt zur passenden Seite<br>
+    • Antworten direkt auf dem Handy eingeben<br>
+    • Bitte nichts neu laden oder zurückspringen
+  </div>
 
-<div class="startBox">
-🚀 <strong>Bereit?</strong><br><br>
-Dann scannt jetzt den QR-Code für <strong>Station 1</strong><br>
-und startet eure Schnitzeljagd!
-</div>
+  <!-- PUNKTE -->
+  <div class="box">
+    <h2>⭐ Punkte & Zeit</h2>
+    • Hauptfrage: <span class="highlight">volle Punkte</span><br>
+    • Bonusfrage: <span class="highlight">Zusatzpunkte</span><br><br>
+    Bei Punktgleichstand entscheidet:
+    <br>⏱️ <span class="highlight">die benötigte Zeit</span>
+  </div>
 
-<button onclick="alert('Viel Erfolg und viel Spaß!')">
-Los geht’s 🎉
-</button>
+  <div class="footer">
+    Viel Erfolg, bleibt fair – und habt Spaß! 🚒🎉
+  </div>
 
 </div>
 
