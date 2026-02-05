@@ -1,127 +1,163 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Schnitzeljagd JF – Stationsübersicht</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Schnitzeljagd – Einweisung</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 20px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
 
-    h1 {
-      text-align: center;
-      color: #60a5fa;
-      margin-bottom: 20px;
-    }
+.card{
+  background:#0f172a;
+  padding:26px;
+  border-radius:16px;
+  width:380px;
+  box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
 
-    table {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      background: #020617;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
+h1{
+  text-align:center;
+  color:#60a5fa;
+  margin-top:0;
+}
 
-    th, td {
-      padding: 12px 14px;
-      text-align: left;
-      border-bottom: 1px solid #1e293b;
-    }
+.section{
+  margin-bottom:18px;
+  line-height:1.6;
+}
 
-    th {
-      background: #020617;
-      color: #93c5fd;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-    }
+.section strong{
+  color:#a5f3fc;
+}
 
-    tr:last-child td {
-      border-bottom: none;
-    }
+ul{
+  padding-left:18px;
+  margin:8px 0;
+}
 
-    tr:hover {
-      background: rgba(96,165,250,0.08);
-    }
+li{
+  margin-bottom:6px;
+}
 
-    .punkte {
-      text-align: center;
-      font-weight: bold;
-      white-space: nowrap;
-    }
+.infoBox{
+  margin-top:18px;
+  padding:16px;
+  border-radius:14px;
+  background:rgba(59,130,246,0.12);
+  border:1px solid rgba(59,130,246,0.45);
+  color:#bfdbfe;
+}
 
-    .footer {
-      text-align: center;
-      margin-top: 18px;
-      font-size: 0.8rem;
-      color: #64748b;
-    }
-  </style>
+.startBox{
+  margin-top:22px;
+  padding:16px;
+  border-radius:14px;
+  background:rgba(34,197,94,0.12);
+  border:1px solid rgba(34,197,94,0.45);
+  color:#bbf7d0;
+  text-align:center;
+}
+
+button{
+  margin-top:18px;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  background:#2563eb;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
 </head>
 
 <body>
 
-<h1>🗺️ Schnitzeljagd – Stationsübersicht</h1>
+<div class="card">
 
-<table>
-  <thead>
-    <tr>
-      <th>Station</th>
-      <th>Frage / Aufgabe</th>
-      <th>Punkte</th>
-      <th>Ort</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Station 1</td>
-      <td>Feuerwehr-Wissensfrage (z. B. europäischer Notruf)</td>
-      <td class="punkte">0–10</td>
-      <td>Freiwillige Feuerwehr Neuhof, Am Baumgarten</td>
-    </tr>
-    <tr>
-      <td>Station 2</td>
-      <td>Beobachtungsaufgabe im öffentlichen Raum</td>
-      <td class="punkte">0–10</td>
-      <td>Aral Tankstelle, Lindenplatz</td>
-    </tr>
-    <tr>
-      <td>Station 3</td>
-      <td>Bewegungs- oder Teamaufgabe</td>
-      <td class="punkte">0–10</td>
-      <td>Asphalt Pumptrack Neuhof</td>
-    </tr>
-    <tr>
-      <td>Station 4</td>
-      <td>Gerätekunde oder Koordinationsaufgabe</td>
-      <td class="punkte">0–10</td>
-      <td>Sports Field Neuhof</td>
-    </tr>
-    <tr>
-      <td>Station 5</td>
-      <td>Rätsel- oder Denkaufgabe</td>
-      <td class="punkte">0–10</td>
-      <td>Spielplatz Frankfurter Straße</td>
-    </tr>
-    <tr>
-      <td>Station 6</td>
-      <td>Abschlussaufgabe / Reflexionsfrage</td>
-      <td class="punkte">0–10</td>
-      <td>Hanauer Straße / Rückweg zur Feuerwehr</td>
-    </tr>
-  </tbody>
-</table>
+<h1>🧭 Schnitzeljagd – Einweisung</h1>
 
-<div class="footer">
-  Schnitzeljagd · Jugendfeuerwehr Neuhof
+<div class="section">
+<strong>🎯 Ziel der Schnitzeljagd</strong><br>
+Ihr bewegt euch als Gruppe von Station zu Station, löst Aufgaben
+und sammelt dabei <strong>Lösungswörter</strong>.  
+Diese werden am Ende benötigt, um das Finalrätsel zu lösen und das
+<strong>Versteck mit Süßigkeiten</strong> freizuschalten 🍬.
+</div>
+
+<div class="section">
+<strong>🗺️ Ablauf</strong>
+<ul>
+  <li>Jede Gruppe startet an Station 1</li>
+  <li>An jeder Station gibt es eine Hauptfrage</li>
+  <li>Zusätzlich kann es eine Bonusfrage geben</li>
+  <li>Nach jeder Station erhaltet ihr ein Rätsel zur nächsten</li>
+</ul>
+</div>
+
+<div class="section">
+<strong>⭐ Punktevergabe</strong>
+<ul>
+  <li>Für jede richtig beantwortete Hauptfrage gibt es Punkte</li>
+  <li>Bonusfragen bringen zusätzliche Punkte</li>
+  <li>Nicht jede Bonusfrage muss beantwortet werden</li>
+</ul>
+</div>
+
+<div class="infoBox">
+<strong>⏱️ Zeit-Regel (wichtig!)</strong><br><br>
+Sollten am Ende zwei oder mehr Gruppen die gleiche Punktzahl haben,
+entscheidet die <strong>benötigte Zeit</strong>.<br><br>
+👉 Die Gruppe, die die Stationen insgesamt <strong>schneller</strong>
+beantwortet hat, liegt vorne.
+</div>
+
+<div class="section">
+<strong>📱 Technik & QR-Codes</strong>
+<ul>
+  <li>Jede Station wird über einen eigenen QR-Code aufgerufen</li>
+  <li>Antworten vollständig eingeben</li>
+  <li>Groß- und Kleinschreibung ist meist egal</li>
+</ul>
+</div>
+
+<div class="section">
+<strong>⚠️ Regeln & Verhalten</strong>
+<ul>
+  <li>Immer als Gruppe zusammenbleiben</li>
+  <li>Auf Verkehr und Umgebung achten</li>
+  <li>Nicht rennen auf Straßen oder Parkplätzen</li>
+  <li>Respektvoll mit Orten und Personen umgehen</li>
+</ul>
+</div>
+
+<div class="section">
+<strong>🤝 Fairplay</strong><br>
+Es geht um Teamgeist, Aufmerksamkeit und Spaß – nicht nur um Tempo.
+Helft euch gegenseitig und genießt das gemeinsame Abenteuer.
+</div>
+
+<div class="startBox">
+🚀 <strong>Bereit?</strong><br><br>
+Dann scannt jetzt den QR-Code für <strong>Station 1</strong><br>
+und startet eure Schnitzeljagd!
+</div>
+
+<button onclick="alert('Viel Erfolg und viel Spaß!')">
+Los geht’s 🎉
+</button>
+
 </div>
 
 </body>
