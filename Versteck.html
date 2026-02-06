@@ -8,7 +8,7 @@
 <style>
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#020617;
   color:#e5e7eb;
   display:flex;
@@ -33,73 +33,53 @@ h1{
 
 p{
   text-align:center;
-  line-height:1.5;
-  color:#cbd5f5;
+  opacity:0.9;
 }
 
-.section{
-  margin-bottom:14px;
-}
-
-.section label{
-  font-weight:bold;
-  display:block;
-  margin-bottom:6px;
-}
-
-.section input{
+input{
   width:100%;
   padding:12px;
+  margin:8px 0;
   border-radius:10px;
   border:1px solid #334155;
   background:#020617;
   color:#e5e7eb;
-  box-sizing:border-box;
   font-size:1rem;
+  box-sizing:border-box;
 }
 
 button{
   width:100%;
-  margin-top:16px;
   padding:14px;
+  margin-top:12px;
   border:none;
   border-radius:12px;
-  background:#22c55e;
-  color:#022c22;
+  background:#2563eb;
+  color:white;
   font-weight:bold;
-  font-size:1.1rem;
   cursor:pointer;
 }
 
 button:hover{
-  background:#16a34a;
+  background:#1d4ed8;
 }
 
-.message{
+.hidden{display:none;}
+
+.success{
+  text-align:center;
+}
+
+.success h2{
+  color:#22c55e;
+}
+
+.success img{
+  max-width:100%;
   margin-top:16px;
-  text-align:center;
-  font-weight:bold;
+  border-radius:14px;
+  border:2px solid rgba(34,197,94,.6);
 }
-
-.hidden{
-  display:none;
-}
-
-/* ERFOLG */
-.erfolgBox{
-  margin-top:20px;
-  padding:18px;
-  border-radius:16px;
-  background:rgba(34,197,94,0.12);
-  border:2px solid rgba(34,197,94,0.5);
-  text-align:center;
-}
-
-.erfolgBox h2{
-  color:#86efac;
-  margin-top:0;
-}
-
 </style>
 </head>
 
@@ -107,92 +87,62 @@ button:hover{
 
 <div class="card">
 
-<h1>🏁 Finale</h1>
+<h1>🔐 Finale</h1>
+<p>Gebt alle Lösungswörter ein, um das Versteck freizuschalten.</p>
 
-<p>
-Alle Gruppen haben Lösungswörter gesammelt.<br>
-Gebt jetzt <strong>alle Wörter richtig ein</strong>,<br>
-um das Versteck zu öffnen!
-</p>
+<div id="eingabe">
+  <input id="g1" placeholder="Lösungswort Gruppe 1">
+  <input id="g2" placeholder="Lösungswort Gruppe 2">
+  <input id="g3" placeholder="Lösungswort Gruppe 3">
+  <input id="g4" placeholder="Lösungswort Gruppe 4">
+  <input id="g5" placeholder="Lösungswort Gruppe 5">
+  <input id="g6" placeholder="Lösungswort Gruppe 6">
 
-<div class="section">
-  <label>Gruppe 1</label>
-  <input type="text" id="g1" placeholder="Lösungswort eingeben">
+  <button onclick="pruefen()">Prüfen & freischalten</button>
 </div>
 
-<div class="section">
-  <label>Gruppe 2</label>
-  <input type="text" id="g2" placeholder="Lösungswort eingeben">
-</div>
-
-<div class="section">
-  <label>Gruppe 3</label>
-  <input type="text" id="g3" placeholder="Lösungswort eingeben">
-</div>
-
-<div class="section">
-  <label>Gruppe 4</label>
-  <input type="text" id="g4" placeholder="Lösungswort eingeben">
-</div>
-
-<div class="section">
-  <label>Gruppe 5</label>
-  <input type="text" id="g5" placeholder="Lösungswort eingeben">
-</div>
-
-<div class="section">
-  <label>Gruppe 6</label>
-  <input type="text" id="g6" placeholder="Lösungswort eingeben">
-</div>
-
-<button onclick="pruefen()">🔓 Versteck freischalten</button>
-
-<div id="fehler" class="message hidden" style="color:#fca5a5;">
-❌ Noch nicht richtig – überprüft eure Wörter!
-</div>
-
-<div id="erfolg" class="erfolgBox hidden">
+<div id="erfolg" class="hidden success">
   <h2>🎉 Geschafft!</h2>
-  <p>
-  Das Versteck ist freigeschaltet!<br><br>
-  👉 <strong>Schaut hinter der großen Holzbank<br>
-  neben dem Feuerwehrhaus</strong><br><br>
-  Viel Spaß mit den Süßigkeiten! 🍬🚒
-  </p>
+  <p>Alle Lösungswörter sind richtig.<br>
+  Das Versteck ist freigegeben!</p>
+
+  <!-- FINALBILD -->
+  <img src="https://daniel911211.github.io/Bilder/Kellerbrand.png"
+       alt="Finales Bild – Versteck">
 </div>
 
 </div>
 
 <script>
+/* 🔧 HIER DIE RICHTIGEN LÖSUNGSWÖRTER EINTRAGEN */
+const loesungen = [
+  "retter",
+  "flamme",
+  "pumpen",
+  "leiter",
+  "wasser",
+  "melder"
+];
+
 function pruefen(){
+  const eingaben = [
+    g1.value,
+    g2.value,
+    g3.value,
+    g4.value,
+    g5.value,
+    g6.value
+  ].map(w => w.trim().toLowerCase());
 
-  const loesungen = {
-    g1: "RETTER",
-    g2: "FLAMME",
-    g3: "PUMPEN",
-    g4: "LEITER",
-    g5: "WASSER",
-    g6: "MELDER"
-  };
-
-  let ok = true;
-
-  for(const key in loesungen){
-    const eingabe = document.getElementById(key).value
-      .toUpperCase()
-      .trim();
-
-    if(eingabe !== loesungen[key]){
-      ok = false;
+  for(let i=0;i<6;i++){
+    if(eingaben[i] !== loesungen[i]){
+      alert("❌ Noch nicht richtig – überprüft die Lösungswörter!");
+      return;
     }
   }
 
-  if(ok){
-    document.getElementById("fehler").classList.add("hidden");
-    document.getElementById("erfolg").classList.remove("hidden");
-  }else{
-    document.getElementById("fehler").classList.remove("hidden");
-  }
+  document.getElementById("eingabe").classList.add("hidden");
+  document.getElementById("erfolg").classList.remove("hidden");
 }
 </script>
 
