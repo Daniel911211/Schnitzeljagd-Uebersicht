@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* GRUNDLAYOUT */
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
@@ -18,7 +17,6 @@ body{
   height:100vh;
 }
 
-/* A4 / BEAMER FLÄCHE */
 .page{
   width:90vw;
   height:90vh;
@@ -28,12 +26,10 @@ body{
   box-shadow:0 30px 60px rgba(0,0,0,.6);
   display:grid;
   grid-template-columns: 1fr 1.2fr 1fr;
-  grid-template-rows: auto auto auto; /* 🔴 WICHTIG */
+  grid-template-rows: auto auto auto;
   gap:24px;
 }
 
-
-/* ÜBERSCHRIFT */
 .header{
   grid-column:1 / 4;
   text-align:center;
@@ -42,7 +38,6 @@ body{
   font-weight:bold;
 }
 
-/* BOXEN */
 .box{
   background:rgba(255,255,255,0.03);
   border:1px solid rgba(96,165,250,0.35);
@@ -50,10 +45,8 @@ body{
   padding:20px;
   font-size:1.1rem;
   line-height:1.6;
-
-  align-self:start;   /* 🔴 verhindert Höhenstreckung */
+  align-self:start;
 }
-
 
 .box h2{
   margin-top:0;
@@ -61,26 +54,22 @@ body{
   font-size:1.4rem;
 }
 
-/* ZENTRALE BOX */
- .center{
-  grid-column: 2;        /* ← DAS fixiert sie in der Mitte */
-  grid-row: 2 / 4;
+.center{
+  grid-column:2;
+  grid-row:2 / 4;
   border:2px solid rgba(34,197,94,0.6);
   background:rgba(34,197,94,0.08);
 }
-
 
 .center h2{
   color:#86efac;
 }
 
-/* HIGHLIGHTS */
 .highlight{
   color:#fde68a;
   font-weight:bold;
 }
 
-/* FOOTER HINWEIS */
 .footer{
   grid-column:1 / 4;
   text-align:center;
@@ -103,22 +92,24 @@ body{
     <h2>📜 Regeln</h2>
     • Jede Gruppe bleibt zusammen<br>
     • Stationen werden <span class="highlight">nacheinander</span> gelöst<br>
-    • Antworten gemeinsam im Team finden und eintragen
+    • Antworten werden <span class="highlight">gemeinsam im Team</span> gefunden und eingetragen
   </div>
 
-  <!-- EINLEITUNG -->
+  <!-- EINFÜHRUNG -->
   <div class="box center">
     <h2>🎯 Einführung – Ziel & Ablauf</h2>
+
     Ihr durchlauft mehrere Stationen.<br><br>
 
-    An jeder Station:
+    An jeder Station gibt es:
     <br>• eine <span class="highlight">Hauptfrage</span>
     <br>• optional eine <span class="highlight">Bonusfrage</span>
     <br>• am Ende ein <span class="highlight">Rätsel zur nächsten Station</span>
     <br><br>
 
     Jede Gruppe sammelt ein <span class="highlight">Lösungswort</span>.<br>
-    Alle Wörter zusammen öffnen am Ende das <span class="highlight">Versteck mit der Belohnung</span>.
+    <span class="highlight">Alle Lösungswörter zusammen</span> werden am Ende benötigt,<br>
+    <span class="highlight">um das Rätsel zum Versteck zu öffnen</span>.
   </div>
 
   <!-- VERHALTEN -->
@@ -126,27 +117,29 @@ body{
     <h2>🤝 Verhalten</h2>
     • Rücksicht auf Passanten nehmen<br>
     • Straßen sicher überqueren<br>
-    • Keine Rennen an gefährlichen Stellen<br>
-    
+    • Keine Rennen an gefährlichen Stellen
   </div>
 
- 
   <!-- TECHNIK -->
   <div class="box">
     <h2>📱 Technik & QR-Code</h2>
     • Eure Laufkarte zeigt euch den QR-Code<br>
-    • Scannen → Aufgabe lösen → weitergehen<br>
-    • Alles wird auf dem Handy eingetragen<br>
-   • Bleibt auf der Seite, bis ihr fertig seid
+    • QR-Code scannen → Aufgabe lösen → weitergehen<br>
+    • Alle Eingaben erfolgen auf dem Handy<br>
+    • Bleibt auf der Seite, bis ihr fertig seid
   </div>
 
-  <!-- PUNKTE -->
+  <!-- GPS & ZEIT -->
   <div class="box">
-    <h2>⭐ Punkte & Zeit</h2>
+    <h2>📍 Standort, Punkte & Zeit</h2>
+    • Fragen erscheinen <span class="highlight">erst am richtigen Standort</span><br>
+    • Der Standort wird per GPS geprüft (ca. <span class="highlight">65 m Radius</span>)<br><br>
+
     • Hauptfrage: <span class="highlight">volle Punkte</span><br>
     • Bonusfrage: <span class="highlight">Zusatzpunkte</span><br><br>
-    Bei Punktgleichstand entscheidet:
-    <br>⏱️ <span class="highlight">die benötigte Zeit</span>
+
+    ⏱️ Die Zeit läuft <span class="highlight">erst ab Freischaltung der Fragen</span><br>
+    Bei Punktgleichstand entscheidet die <span class="highlight">benötigte Zeit</span>.
   </div>
 
   <div class="footer">
